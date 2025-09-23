@@ -44,30 +44,6 @@ do
 		blocklist_expr="-e %"
 	fi
 
-	#ifdef OPLUS_BUG_STABILITY
-	#ZengHui@CONNECTIVITY.WIFI.HARDWARE.FTM, 2023/05/04,
-	#Add for ftm mode do not probe qca_cld3 ko
-	if [ "$(cat /sys/systeminfo/ftmmode)" == "3" ]; then
-		blocklist_expr+=" -e qca_cld3_kiwi_v2"
-	fi
-	#endif /* OPLUS_BUG_STABILITY */
-
-	#ifdef OPLUS_BUG_STABILITY
-	#fangbinghua@CONNECTIVITY.WIFI.HARDWARE.SWITCH, 2024/03/08,
-	#dont load qca6750 ko when platform is SM8650
-	if [ "$(getprop ro.soc.model)" == "SM8650" ]; then
-		blocklist_expr+=" -e qca_cld3_qca6750"
-	fi
-	#endif /* OPLUS_BUG_STABILITY */
-
-	#ifdef OPLUS_BUG_STABILITY
-	#fangbinghua@CONNECTIVITY.WIFI.HARDWARE.SWITCH, 2024/03/08,
-	#dont load kiwi_v2 ko when platform is SM7675
-	if [ "$(getprop ro.soc.model)" == "SM7675" ]; then
-		blocklist_expr+=" -e qca_cld3_kiwi_v2"
-	fi
-	#endif /* OPLUS_BUG_STABILITY */
-
 	# Filter out modules in blocklist - we would see unnecessary errors otherwise
 	load_modules=$(sed = ${dir}/modules.load | sed 'N;s/\n/\t/' | sort -uk2 | sort -nk1 | cut -f2- | grep -w -v ${blocklist_expr} | grep -w -v ${audio_blocklist_expr})
 	first_module=$(echo ${load_modules} | cut -d " " -f1)
