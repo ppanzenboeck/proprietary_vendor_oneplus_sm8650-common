@@ -7,6 +7,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/Custom_LUT_hlg.cube:$(TARGET_COPY_OUT_ODM)/etc/Custom_LUT_hlg.cube \
+    vendor/oneplus/sm8650-common/proprietary/odm/etc/QtiFtmPublicKey.pem:$(TARGET_COPY_OUT_ODM)/etc/QtiFtmPublicKey.pem \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/apdr.conf:$(TARGET_COPY_OUT_ODM)/etc/apdr.conf \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/camera/AiFace.json:$(TARGET_COPY_OUT_ODM)/etc/camera/AiFace.json \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/camera/CameraOemConfiguration.config:$(TARGET_COPY_OUT_ODM)/etc/camera/CameraOemConfiguration.config \
@@ -1162,9 +1163,11 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/commcenterd.rc:$(TARGET_COPY_OUT_ODM)/etc/init/commcenterd.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/esim@1.0-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/esim@1.0-service.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/hw/init.oplus.display.rc:$(TARGET_COPY_OUT_ODM)/etc/init/hw/init.oplus.display.rc \
+    vendor/oneplus/sm8650-common/proprietary/odm/etc/init/hw/init.oplus.wifi.rc:$(TARGET_COPY_OUT_ODM)/etc/init/hw/init.oplus.wifi.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/init.oplus.sensor.rc:$(TARGET_COPY_OUT_ODM)/etc/init/init.oplus.sensor.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/init.oppo.reserve.rc:$(TARGET_COPY_OUT_ODM)/etc/init/init.oppo.reserve.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/init.touchDaemon.rc:$(TARGET_COPY_OUT_ODM)/etc/init/init.touchDaemon.rc \
+    vendor/oneplus/sm8650-common/proprietary/odm/etc/init/subsys_daemon.rc:$(TARGET_COPY_OUT_ODM)/etc/init/subsys_daemon.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/vendor-oplus-hardware-touch-V2-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor-oplus-hardware-touch-V2-service.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/vendor.oplus.hardware.biometrics.fingerprint@2.1-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.oplus.hardware.biometrics.fingerprint@2.1-service.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/vendor.oplus.hardware.biometrics.fingerprintpay@1.0-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.oplus.hardware.biometrics.fingerprintpay@1.0-service.rc \
@@ -1177,6 +1180,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/media_codecs_dolby_vision.xml:$(TARGET_COPY_OUT_ODM)/etc/media_codecs_dolby_vision.xml \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_ODM)/etc/media_profiles_V1_0.xml \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/oem_stx_platform_license.pfm:$(TARGET_COPY_OUT_ODM)/etc/oem_stx_platform_license.pfm \
+    vendor/oneplus/sm8650-common/proprietary/odm/etc/plugin_config.xml:$(TARGET_COPY_OUT_ODM)/etc/plugin_config.xml \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/sap.conf:$(TARGET_COPY_OUT_ODM)/etc/sap.conf \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/uah/uahconfig.pb:$(TARGET_COPY_OUT_ODM)/etc/uah/uahconfig.pb \
     vendor/oneplus/sm8650-common/proprietary/odm/lib64/camera/awb_parameter_default.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/awb_parameter_default.bin \
@@ -1236,6 +1240,8 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/product/etc/permissions/UimGbaManager.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/UimGbaManager.xml \
     vendor/oneplus/sm8650-common/proprietary/product/etc/permissions/UimService.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/UimService.xml \
     vendor/oneplus/sm8650-common/proprietary/product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/com.android.hotwordenrollment.common.util.xml \
+    vendor/oneplus/sm8650-common/proprietary/system/etc/permissions/uimremoteclient.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/uimremoteclient.xml \
+    vendor/oneplus/sm8650-common/proprietary/system/etc/permissions/uimremoteserver.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/uimremoteserver.xml \
     vendor/oneplus/sm8650-common/proprietary/system/etc/sysconfig/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
     vendor/oneplus/sm8650-common/proprietary/system_ext/etc/dpm/dpm.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/dpm/dpm.conf \
     vendor/oneplus/sm8650-common/proprietary/system_ext/etc/horae/horae.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/horae/horae.conf \
@@ -1264,6 +1270,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_telephony_system_packages_config.xml \
     vendor/oneplus/sm8650-common/proprietary/system_ext/etc/sysconfig/qti_whitelist_system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist_system_ext.xml \
     vendor/oneplus/sm8650-common/proprietary/system_ext/etc/wfdconfigsink.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/wfdconfigsink.xml \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/2024-01-12_platform_RSA_license_a226ad89-a187-4b14-9447-d20bfe9dac1a.pfm:$(TARGET_COPY_OUT_VENDOR)/etc/2024-01-12_platform_RSA_license_a226ad89-a187-4b14-9447-d20bfe9dac1a.pfm \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/ASR_binary/Whisper/libSnpeHtpV75Skel.so:$(TARGET_COPY_OUT_VENDOR)/etc/ASR_binary/Whisper/libSnpeHtpV75Skel.so \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/ASR_binary/Whisper/speech_float.eai:$(TARGET_COPY_OUT_VENDOR)/etc/ASR_binary/Whisper/speech_float.eai \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/O_STX_platform_license.pfm:$(TARGET_COPY_OUT_VENDOR)/etc/O_STX_platform_license.pfm \
@@ -1364,25 +1371,6 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/DPU9__.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/DPU9__.xml \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/advanced_sf_offsets.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/advanced_sf_offsets.xml \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/perf_hint_threshold.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/perf_hint_threshold.xml \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_Dual_dsi_csot_nt36532_video_mode_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_Dual_dsi_csot_nt36532_video_mode_panel_with_DSC.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_Sharp_2k_cmd_mode_qsync_dsi_panel.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_Sharp_2k_cmd_mode_qsync_dsi_panel.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_Sharp_2k_video_mode_qsync_dsi_panel.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_Sharp_2k_video_mode_qsync_dsi_panel.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_Sharp_4k_cmd_mode_dsc_dsi_panel.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_Sharp_4k_cmd_mode_dsc_dsi_panel.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_Sharp_4k_video_mode_dsc_dsi_panel.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_Sharp_4k_video_mode_dsc_dsi_panel.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_Sharp_qhd_cmd_mode_dsi_panel.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_Sharp_qhd_cmd_mode_dsi_panel.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_Sharp_qhd_video_mode_dsi_panel.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_Sharp_qhd_video_mode_dsi_panel.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_ft8726_lcd_video_mode_dsi_focaltech_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_ft8726_lcd_video_mode_dsi_focaltech_panel_with_DSC.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_nt36672e_lcd_video_mode_dsi_novatek_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_nt36672e_lcd_video_mode_dsi_novatek_panel_with_DSC.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_nt36672e_lcd_video_mode_dsi_novatek_panel_without_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_nt36672e_lcd_video_mode_dsi_novatek_panel_without_DSC.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_r66451_amoled_cmd_mode_dsi_visionox_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_r66451_amoled_cmd_mode_dsi_visionox_panel_with_DSC.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_r66451_amoled_cmd_mode_dsi_visionox_panel_without_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_r66451_amoled_cmd_mode_dsi_visionox_panel_without_DSC.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_r66451_amoled_video_mode_dsi_visionox_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_r66451_amoled_video_mode_dsi_visionox_panel_with_DSC.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_r66451_amoled_video_mode_dsi_visionox_panel_without_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_r66451_amoled_video_mode_dsi_visionox_panel_without_DSC.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_sharp_1080p_cmd_mode_dsi_panel.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_sharp_1080p_cmd_mode_dsi_panel.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_vtdr6130_amoled_cmd_mode_dsi_visionox_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_vtdr6130_amoled_cmd_mode_dsi_visionox_panel_with_DSC.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_vtdr6130_amoled_qsync_cmd_mode_dsi_visionox_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_vtdr6130_amoled_qsync_cmd_mode_dsi_visionox_panel_with_DSC.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_vtdr6130_amoled_qsync_video_mode_dsi_visionox_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_vtdr6130_amoled_qsync_video_mode_dsi_visionox_panel_with_DSC.json \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/qdcm_calib_data_vtdr6130_amoled_video_mode_dsi_visionox_panel_with_DSC.json:$(TARGET_COPY_OUT_VENDOR)/etc/display/qdcm_calib_data_vtdr6130_amoled_video_mode_dsi_visionox_panel_with_DSC.json \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/display/thermallevel_to_fps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/thermallevel_to_fps.xml \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/dolby_vision.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/dolby_vision.cfg \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/dpm_vndr/vendor.dpm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/dpm_vndr/vendor.dpm.conf \
@@ -1415,6 +1403,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/dcfd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dcfd.rc \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/dpmQmiMgr.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/dpmQmiMgr.rc \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/feature_enabler_client.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/feature_enabler_client.rc \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/hexlpservice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hexlpservice.rc \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/ims-dataservice-daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/ims-dataservice-daemon.rc \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/ims_rtp_daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/ims_rtp_daemon.rc \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/imsdaemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/imsdaemon.rc \
@@ -1426,6 +1415,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/init.qti.qcv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qti.qcv.rc \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/init.time_daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.time_daemon.rc \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/init.vendor.sensors.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.sensors.rc \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/init.vendor.wlan.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.wlan.rc \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/init_thermal-engine-v2.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init_thermal-engine-v2.rc \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/loc-launcher.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/loc-launcher.rc \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/nicmd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/nicmd.rc \
@@ -1471,6 +1461,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/vendor.qti.psiclient@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.psiclient@1.0-service.rc \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/vendor.qti.qspmhal-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.qspmhal-service.rc \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/vendor.qti.rmt_storage.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.rmt_storage.rc \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/vendor.qti.smp2p.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.smp2p.rc \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/vendor.qti.tftp.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.tftp.rc \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/vendor.sensors.qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.sensors.qti.rc \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/init/vendor.sensors.sscrpcd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.sensors.sscrpcd.rc \
@@ -1497,10 +1488,6 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/ltm_config_AA545_P_3_A0005_dsc_cmd_mode_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ltm_config_AA545_P_3_A0005_dsc_cmd_mode_panel.xml \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/ltm_config_AC090_P_3_A0005_dsc_cmd_mode_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ltm_config_AC090_P_3_A0005_dsc_cmd_mode_panel.xml \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/ltm_config_enzo_boe_ili7838e_1264_2780_dsc_cmd_mode_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ltm_config_enzo_boe_ili7838e_1264_2780_dsc_cmd_mode_panel.xml \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/ltm_config_enzo_boe_ili7838e_1264_2780_evt_dsc_cmd_mode_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ltm_config_enzo_boe_ili7838e_1264_2780_evt_dsc_cmd_mode_panel.xml \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/ltm_config_enzo_boe_ili7838e_1264_2780_high_pre_dsc_cmd_mode_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ltm_config_enzo_boe_ili7838e_1264_2780_high_pre_dsc_cmd_mode_panel.xml \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/ltm_config_enzo_boe_ili7838e_1264_2780_pvt_bd_dsc_cmd_mode_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ltm_config_enzo_boe_ili7838e_1264_2780_pvt_bd_dsc_cmd_mode_panel.xml \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/media_cliffs_v0/video_system_specs.json:$(TARGET_COPY_OUT_VENDOR)/etc/media_cliffs_v0/video_system_specs.json \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/media_cliffs_v1/video_system_specs.json:$(TARGET_COPY_OUT_VENDOR)/etc/media_cliffs_v1/video_system_specs.json \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/media_codecs_cliffs_v0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_cliffs_v0.xml \
@@ -1514,7 +1501,6 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/media_profiles_cliffs_v0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_cliffs_v0.xml \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/media_profiles_cliffs_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_cliffs_v1.xml \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/media_profiles_pineapple.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_pineapple.xml \
-    vendor/oneplus/sm8650-common/proprietary/vendor/etc/mem_logger_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mem_logger_config.xml \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/models/acd/environment.eai:$(TARGET_COPY_OUT_VENDOR)/etc/models/acd/environment.eai \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/models/acd/event.eai:$(TARGET_COPY_OUT_VENDOR)/etc/models/acd/event.eai \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/models/acd/music.eai:$(TARGET_COPY_OUT_VENDOR)/etc/models/acd/music.eai \
@@ -1635,6 +1621,29 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/lanai_vertigo_ak991x_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/lanai_vertigo_ak991x_0.json \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/lanai_vertigo_lsm6dsv_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/lanai_vertigo_lsm6dsv_0.json \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/lanai_vertigo_lsm6dsv_1.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/lanai_vertigo_lsm6dsv_1.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_bu52053nvx_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_bu52053nvx_0.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_default_sensors.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_default_sensors.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_dynamic_sensors.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_dynamic_sensors.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_dynamic_sensors_template.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_dynamic_sensors_template.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_fcal_mmc56x3x_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_fcal_mmc56x3x_0.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_irq.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_irq.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_lps22df_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_lps22df_0.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_lsm6dso_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_lsm6dso_0.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_lsm6dso_1.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_lsm6dso_1.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_mmc56x3x_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_mmc56x3x_0.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_mtp_lsm6dso_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_mtp_lsm6dso_0.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_mtp_lsm6dso_1.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_mtp_lsm6dso_1.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_mtp_mmc56x3x_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_mtp_mmc56x3x_0.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_power_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_power_0.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_qrd_lsm6dso_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_qrd_lsm6dso_0.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_qrd_mmc56x3x_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_qrd_mmc56x3x_0.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_qrd_tmd2755_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_qrd_tmd2755_0.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_qsh_ble_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_qsh_ble_0.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_sx932x_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_sx932x_0.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_tmd2755_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_tmd2755_0.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_vertigo_lsm6dso_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_vertigo_lsm6dso_0.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_vertigo_lsm6dso_1.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_vertigo_lsm6dso_1.json \
+    vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/palawan_vertigo_mmc56x3x_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/palawan_vertigo_mmc56x3x_0.json \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/qsh_ble.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/qsh_ble.json \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/qsh_camera_common.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/qsh_camera_common.json \
     vendor/oneplus/sm8650-common/proprietary/vendor/etc/sensors/config/qsh_camera_imx480_3.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/qsh_camera_imx480_3.json \
@@ -2237,6 +2246,7 @@ PRODUCT_PACKAGES += \
     libgps.utils \
     libgpt \
     libgpudataproducer \
+    libgralloccore \
     libgsl \
     libhalide_hexagon_host \
     libhdcp1prov \
@@ -2356,11 +2366,13 @@ PRODUCT_PACKAGES += \
     libnspsuperresolutionserviceextension \
     libnsptransaction \
     liboffscreenpoweroptfeature \
+    libolc_vnd_vendor \
     libopencv \
     libopencv3a \
     libopestriping \
     libops \
     libos \
+    libosensenativeproxy_client_vendor \
     libpal_net_if \
     libpasrutils \
     libpdmapper \
@@ -2522,7 +2534,6 @@ PRODUCT_PACKAGES += \
     libsns_dynamic_loader_stub \
     libsns_registry_skel \
     libsns_remote_proc_state_stub \
-    libsnsapi-full \
     libsnsapi \
     libsnsdiaglog \
     libsnsutils \
@@ -2553,11 +2564,6 @@ PRODUCT_PACKAGES += \
     libthreadutils \
     libtime_genoff \
     libtinyxml2_1 \
-    libtlpd \
-    libtlpd_configmgr \
-    libtlpd_crypto \
-    libtlpd_internal \
-    libtlpd_logger \
     libtracker_6dof_impl \
     libtriplecam_optical_zoom_control_vendor \
     libtriplecam_video_optical_zoom_vendor \
@@ -2684,7 +2690,9 @@ PRODUCT_PACKAGES += \
     vendor.oplus.hardware.displaycolorfeature-V1-ndk_vendor \
     vendor.oplus.hardware.displaypanelfeature-V1-ndk_vendor \
     vendor.oplus.hardware.ims-V1-ndk \
+    vendor.oplus.hardware.olc2-V2-ndk_vendor \
     vendor.oplus.hardware.stability.oplus_project-V1-ndk \
+    vendor.pixelworks.hardware.display-V2-ndk_vendor \
     vendor.pixelworks.hardware.display@1.0_vendor \
     vendor.pixelworks.hardware.display@1.1_vendor \
     vendor.pixelworks.hardware.display@1.2_vendor \
@@ -2740,6 +2748,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.factory@1.0 \
     vendor.qti.hardware.factory@1.1 \
     vendor.qti.hardware.fm@1.0 \
+    vendor.qti.hardware.hexlp-V1-ndk \
     vendor.qti.hardware.iop@1.0 \
     vendor.qti.hardware.iop@2.0 \
     vendor.qti.hardware.limits@1.0 \
@@ -3116,7 +3125,6 @@ PRODUCT_PACKAGES += \
     libhybridsr_datas \
     libhybridsr_tuningparams \
     libhyperlapse \
-    libiceainr \
     libifaa_factory \
     libimgClarityEvaluate \
     libmindroid-app \
@@ -3153,6 +3161,10 @@ PRODUCT_PACKAGES += \
     libqcodec2_dolbydecoderfilter \
     libqcodec2_dolbyencoderfilter \
     libqsh.utils \
+    libqti-radio-service \
+    libqti-subsys-service \
+    libradio-service \
+    libradioapis \
     libremosaic_wrapper \
     librfapis \
     libroi \
@@ -3169,6 +3181,8 @@ PRODUCT_PACKAGES += \
     libstface_datas \
     libstface_fd_api \
     libstfd_mobile_api \
+    libsubsys-service \
+    libsubsys-utils \
     libtensorflowlite_oplus \
     libtfavib \
     libthirdcapability \
@@ -3192,10 +3206,13 @@ PRODUCT_PACKAGES += \
     vendor.oplus.hardware.communicationcenter-V2-ndk \
     vendor.oplus.hardware.displaycolorfeature-V1-ndk \
     vendor.oplus.hardware.displaypanelfeature-V1-ndk_odm \
+    vendor.oplus.hardware.olc2-V1-ndk \
     vendor.oplus.hardware.olc2-V2-ndk \
     vendor.oplus.hardware.sendextcamcmd-V1-service-impl \
     vendor.oplus.hardware.sendextcamcmd-V2-ndk \
     vendor.oplus.hardware.stability.oplus_project-V2-ndk \
+    vendor.oplus.hardware.subsys-V3-ndk \
+    vendor.oplus.hardware.subsys_radio-V4-ndk \
     vendor.pixelworks.hardware.display-V2-ndk \
     vendor.pixelworks.hardware.display-impl-i7 \
     vendor.pixelworks.hardware.display-impl-i7p \
@@ -3306,6 +3323,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.alarm.xml \
     vendor.qti.hardware.embmssl.xml \
     vendor.qti.hardware.factory.ifactory.xml \
+    vendor.qti.hardware.hexlp-service.xml \
     vendor.qti.hardware.limits-service.xml \
     vendor.qti.hardware.perf2.xml \
     vendor.qti.hardware.power.powermodule.xml \
@@ -3354,6 +3372,7 @@ PRODUCT_PACKAGES += \
     feature_enabler_client \
     hdcp1prov \
     hdcp2p2prov \
+    hexlpservice \
     android.hardware.bluetooth@1.1-service-qti \
     android.hardware.contexthub-service.qmi \
     android.hardware.gatekeeper-service-qti \
@@ -3384,6 +3403,10 @@ PRODUCT_PACKAGES += \
     ims-dataservice-daemon \
     ims_rtp_daemon \
     imsdaemon \
+    init.kernel.post_boot-cliffs \
+    init.kernel.post_boot-cliffs_2_2_1 \
+    init.kernel.post_boot-cliffs_2_3_0 \
+    init.kernel.post_boot-cliffs_3_3_1 \
     init.kernel.post_boot-memory \
     init.kernel.post_boot-pineapple_2_3_1_1 \
     init.kernel.post_boot-pineapple_2_3_2_0 \
@@ -3466,6 +3489,7 @@ PRODUCT_PACKAGES += \
     commcenterd \
     cwb_utils_aidl \
     android.hardware.secure_element-service.qti \
+    subsys_daemon \
     vendor-oplus-hardware-touch-V2-service \
     vendor.oplus.hardware.biometrics.fingerprint@2.1-service_uff \
     vendor.oplus.hardware.biometrics.fingerprintpay@1.0-service \
@@ -3476,7 +3500,10 @@ PRODUCT_PACKAGES += \
     vendor.oplus.hardware.stability.oplus_project-V1-service \
     vendor.pixelworks.hardware.feature-service \
     wlschgd \
+    init.oplus.wifi \
+    init.subsys \
     irisConfig \
+    oldc_vnd \
     oplus_sensor_fb \
     touchDaemon
 
