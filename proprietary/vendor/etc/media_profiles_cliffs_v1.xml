@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (c) 2023 Qualcomm Technologies, Inc.
+     Copyright (c) 2021,2023 Qualcomm Technologies, Inc.
      All Rights Reserved.
      Confidential and Proprietary - Qualcomm Technologies, Inc.
 
@@ -99,7 +99,14 @@
 <MediaSettings>
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
     <!-- Back Camera -->
+    <!-- #ifndef OPLUS_BUG_COMPATIBILITY -->
+    <!-- Modify for avoiding video recording signal tone -->
+    <!--
     <CamcorderProfiles cameraId="0">
+    -->
+    <!-- #else  //OPLUS_BUG_COMPATIBILITY -->
+    <CamcorderProfiles cameraId="0" startOffsetMs="300">
+    <!-- #endif //OPLUS_BUG_COMPATIBILITY -->
 
     <EncoderProfile quality="low" fileFormat="3gp" duration="30">
       <Video codec="h264"
@@ -191,8 +198,8 @@
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
-
-    <EncoderProfile quality="4kdci" fileFormat="mp4" duration="30">
+<!-- VENDOR EDIT START -->
+    <!--<EncoderProfile quality="4kdci" fileFormat="mp4" duration="30">
       <Video codec="h264"
             bitRate="57500000"
             width="4096"
@@ -203,13 +210,26 @@
             bitRate="156000"
             sampleRate="48000"
             channels="2" />
-    </EncoderProfile>
-
+    </EncoderProfile>-->
+<!-- VENDOR EDIT END -->
     <EncoderProfile quality="2160p" fileFormat="mp4" duration="30">
       <Video codec="h264"
             bitRate="50000000"
             width="3840"
             height="2160"
+            frameRate="30" />
+
+      <Audio codec="aac"
+            bitRate="156000"
+            sampleRate="48000"
+            channels="2" />
+    </EncoderProfile>
+
+    <EncoderProfile quality="8kuhd" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+            bitRate="74000000"
+            width="7680"
+            height="4320"
             frameRate="30" />
 
       <Audio codec="aac"
@@ -370,8 +390,8 @@
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
-
-    <EncoderProfile quality="timelapse4kdci" fileFormat="mp4" duration="30">
+<!-- VENDOR EDIT START -->
+    <!--<EncoderProfile quality="timelapse4kdci" fileFormat="mp4" duration="30">
       <Video codec="h264"
             bitRate="57500000"
             width="4096"
@@ -382,13 +402,26 @@
             bitRate="156000"
             sampleRate="48000"
             channels="2" />
-    </EncoderProfile>
-
+    </EncoderProfile>-->
+<!-- VENDOR EDIT END -->
     <EncoderProfile quality="timelapse2160p" fileFormat="mp4" duration="30">
       <Video codec="h264"
             bitRate="50000000"
             width="3840"
             height="2160"
+            frameRate="30" />
+
+      <Audio codec="aac"
+            bitRate="156000"
+            sampleRate="48000"
+            channels="2" />
+    </EncoderProfile>
+
+    <EncoderProfile quality="timelapse8kuhd" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+            bitRate="74000000"
+            width="7680"
+            height="4320"
             frameRate="30" />
 
       <Audio codec="aac"
@@ -404,7 +437,14 @@
 
     </CamcorderProfiles>
     <!-- Front Camera -->
+    <!-- #ifndef OPLUS_BUG_COMPATIBILITY -->
+    <!-- Modify for avoiding video recording signal tone -->
+    <!--
     <CamcorderProfiles cameraId="1">
+    -->
+    <!-- #else  //OPLUS_BUG_COMPATIBILITY -->
+    <CamcorderProfiles cameraId="1" startOffsetMs="300">
+    <!-- #endif //OPLUS_BUG_COMPATIBILITY -->
 
     <EncoderProfile quality="low" fileFormat="3gp" duration="30">
       <Video codec="h264"
@@ -419,7 +459,8 @@
              channels="1" />
     </EncoderProfile>
 
-    <EncoderProfile quality="high" fileFormat="mp4" duration="30">
+    <!-- VENDOR EDIT START -->
+    <!--<EncoderProfile quality="high" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="50000000"
              width="3840"
@@ -430,7 +471,20 @@
              bitRate="156000"
              sampleRate="48000"
              channels="2" />
+    </EncoderProfile>-->
+    <EncoderProfile quality="high" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+             bitRate="20000000"
+             width="1920"
+             height="1080"
+             frameRate="30" />
+
+      <Audio codec="aac"
+             bitRate="156000"
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
+    <!-- VENDOR EDIT END -->
 
     <EncoderProfile quality="qvga" fileFormat="mp4" duration="60">
       <Video codec="h264"
@@ -497,6 +551,8 @@
              channels="2" />
     </EncoderProfile>
 
+    <!-- VENDOR EDIT START -->
+    <!--
     <EncoderProfile quality="4kdci" fileFormat="mp4" duration="30">
       <Video codec="h264"
             bitRate="57500000"
@@ -522,6 +578,21 @@
             sampleRate="48000"
             channels="2" />
     </EncoderProfile>
+
+    <EncoderProfile quality="8kuhd" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+            bitRate="74000000"
+            width="7680"
+            height="4320"
+            frameRate="30" />
+
+      <Audio codec="aac"
+            bitRate="156000"
+            sampleRate="48000"
+            channels="2" />
+    </EncoderProfile>
+    -->
+    <!-- VENDOR EDIT END -->
 
     <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
       <Video codec="h264"
@@ -564,11 +635,25 @@
              channels="1" />
     </EncoderProfile>
 
-    <EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="30">
+    <!-- VENDOR EDIT START -->
+    <!--<EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="50000000"
              width="3840"
              height="2160"
+             frameRate="30" />-->
+
+      <!-- audio setting is ignored -->
+      <!--<Audio codec="aac"
+             bitRate="156000"
+             sampleRate="48000"
+             channels="2" />
+    </EncoderProfile> -->
+    <EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+             bitRate="20000000"
+             width="1920"
+             height="1080"
              frameRate="30" />
 
       <!-- audio setting is ignored -->
@@ -577,6 +662,7 @@
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
+    <!-- VENDOR EDIT END -->
 
     <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
       <Video codec="h264"
@@ -676,6 +762,8 @@
              channels="2" />
     </EncoderProfile>
 
+    <!-- VENDOR EDIT START -->
+    <!--
     <EncoderProfile quality="timelapse4kdci" fileFormat="mp4" duration="30">
       <Video codec="h264"
             bitRate="57500000"
@@ -688,7 +776,11 @@
             sampleRate="48000"
             channels="2" />
     </EncoderProfile>
+    -->
+    <!-- VENDOR EDIT END -->
 
+    <!-- VENDOR EDIT START -->
+    <!--
     <EncoderProfile quality="timelapse2160p" fileFormat="mp4" duration="30">
       <Video codec="h264"
             bitRate="50000000"
@@ -701,6 +793,21 @@
             sampleRate="48000"
             channels="2" />
     </EncoderProfile>
+
+    <EncoderProfile quality="timelapse8kuhd" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+            bitRate="74000000"
+            width="7680"
+            height="4320"
+            frameRate="30" />
+
+      <Audio codec="aac"
+            bitRate="156000"
+            sampleRate="48000"
+            channels="2" />
+    </EncoderProfile>
+    -->
+    <!-- VENDOR EDIT END -->
 
         <ImageEncoding quality="95" />
         <ImageEncoding quality="80" />
@@ -828,6 +935,19 @@
             channels="2" />
     </EncoderProfile>
 
+    <EncoderProfile quality="8kuhd" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+            bitRate="74000000"
+            width="7680"
+            height="4320"
+            frameRate="30" />
+
+      <Audio codec="aac"
+            bitRate="156000"
+            sampleRate="48000"
+            channels="2" />
+    </EncoderProfile>
+
     <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
       <Video codec="h264"
              bitRate="192000"
@@ -999,6 +1119,19 @@
             bitRate="50000000"
             width="3840"
             height="2160"
+            frameRate="30" />
+
+      <Audio codec="aac"
+            bitRate="156000"
+            sampleRate="48000"
+            channels="2" />
+    </EncoderProfile>
+
+     <EncoderProfile quality="timelapse8kuhd" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+            bitRate="74000000"
+            width="7680"
+            height="4320"
             frameRate="30" />
 
       <Audio codec="aac"
@@ -1083,7 +1216,8 @@
              sampleRate="8000"
              channels="1" />
     </EncoderProfile>
-
+<!-- VENDOR EDIT START -->
+    <!--
     <EncoderProfile quality="high" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="50000000"
@@ -1096,7 +1230,8 @@
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
-
+    -->
+<!-- VENDOR EDIT END -->
     <EncoderProfile quality="qvga" fileFormat="mp4" duration="60">
       <Video codec="h264"
              bitRate="512000"
@@ -1174,7 +1309,8 @@
             sampleRate="48000"
             channels="2" />
     </EncoderProfile>
-
+<!-- VENDOR EDIT START -->
+    <!--
     <EncoderProfile quality="2160p" fileFormat="mp4" duration="30">
       <Video codec="h264"
             bitRate="50000000"
@@ -1188,6 +1324,20 @@
             channels="2" />
     </EncoderProfile>
 
+    <EncoderProfile quality="8kuhd" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+            bitRate="74000000"
+            width="7680"
+            height="4320"
+            frameRate="30" />
+
+      <Audio codec="aac"
+            bitRate="156000"
+            sampleRate="48000"
+            channels="2" />
+    </EncoderProfile>
+    -->
+<!-- VENDOR EDIT END -->
     <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
       <Video codec="h264"
              bitRate="192000"
@@ -1227,7 +1377,8 @@
              sampleRate="8000"
              channels="1" />
     </EncoderProfile>
-
+<!-- VENDOR EDIT START -->
+    <!--
     <EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="50000000"
@@ -1235,13 +1386,13 @@
              height="2160"
              frameRate="30" />
 
-      <!-- audio setting is ignored -->
       <Audio codec="aac"
              bitRate="156000"
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
-
+    -->
+<!-- VENDOR EDIT END -->
     <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="192000"
@@ -1269,7 +1420,6 @@
              sampleRate="8000"
              channels="1" />
     </EncoderProfile>
-
 
     <EncoderProfile quality="timelapseqvga" fileFormat="mp4" duration="30">
       <Video codec="h264"
@@ -1340,7 +1490,8 @@
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
-
+<!-- VENDOR EDIT START -->
+    <!--
     <EncoderProfile quality="timelapse4kdci" fileFormat="mp4" duration="30">
       <Video codec="h264"
             bitRate="57500000"
@@ -1367,6 +1518,20 @@
             channels="2" />
     </EncoderProfile>
 
+    <EncoderProfile quality="timelapse8kuhd" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+            bitRate="74000000"
+            width="7680"
+            height="4320"
+            frameRate="30" />
+
+      <Audio codec="aac"
+            bitRate="156000"
+            sampleRate="48000"
+            channels="2" />
+    </EncoderProfile>
+    -->
+<!-- VENDOR EDIT END -->
     <EncoderProfile quality="highspeed1080p" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="50000000"
@@ -1741,27 +1906,36 @@
          In other words, the applications won't be able to use the codec
          or query the capabilities of the codec at all if it is disabled
     -->
-
     <VideoEncoderCap name="h264" enabled="true"
-        minBitRate="64000" maxBitRate="50000000"
-        minFrameWidth="176" maxFrameWidth="4096"
-        minFrameHeight="144" maxFrameHeight="2160"
-        minFrameRate="15" maxFrameRate="60"
+        minBitRate="64000" maxBitRate="105000000"
+        minFrameWidth="176" maxFrameWidth="7680"
+        minFrameHeight="144" maxFrameHeight="4320"
+        minFrameRate="15" maxFrameRate="30"
         maxHFRFrameWidth="1920" maxHFRFrameHeight="1080"
-        maxHFRMode="240"  />
+        maxHFRMode="120"  />
 
     <VideoEncoderCap name="hevc" enabled="true"
-        minBitRate="64000" maxBitRate="50000000"
-        minFrameWidth="176" maxFrameWidth="4096"
-        minFrameHeight="144" maxFrameHeight="2160"
-        minFrameRate="15" maxFrameRate="60"
-        maxHFRFrameWidth="1920" maxHFRFrameHeight="1080"
-        maxHFRMode="240"  />
+        minBitRate="64000" maxBitRate="73500000"
+        minFrameWidth="176" maxFrameWidth="7680"
+        minFrameHeight="144" maxFrameHeight="4320"
+        minFrameRate="15" maxFrameRate="30"
+        maxHFRFrameWidth="0" maxHFRFrameHeight="0"
+        maxHFRMode="0"  />
 
+    <!-- #ifndef OPLUS_BUG_COMPATIBILITY -->
+    <!-- Guanbiao.Liu@MULTIMEDIA.MEDIASERVICE.PLAYER, 2022/06/15, Modify for promote aac audio quality -->
+    <!--
     <AudioEncoderCap name="aac" enabled="true"
         minBitRate="8000" maxBitRate="96000"
         minSampleRate="8000" maxSampleRate="48000"
         minChannels="1" maxChannels="6" />
+    -->
+    <!-- #else  //OPLUS_BUG_COMPATIBILITY -->
+    <AudioEncoderCap name="aac" enabled="true"
+        minBitRate="8000" maxBitRate="256000"
+        minSampleRate="8000" maxSampleRate="48000"
+        minChannels="1" maxChannels="6" />
+    <!-- #endif //OPLUS_BUG_COMPATIBILITY -->
 
     <AudioEncoderCap name="heaac" enabled="true"
         minBitRate="8000" maxBitRate="64000"
