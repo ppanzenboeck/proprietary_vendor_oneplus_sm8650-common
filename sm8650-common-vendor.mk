@@ -15,6 +15,10 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/vendor-oplus-hardware-touch-V2-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor-oplus-hardware-touch-V2-service.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/vendor.oplus.hardware.charger-V10-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.oplus.hardware.charger-V10-service.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_ODM)/etc/media_profiles_V1_0.xml \
+    vendor/oneplus/sm8650-common/proprietary/odm/lib64/camera/com.qti.sensormodule.qtech_imx581.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/com.qti.sensormodule.qtech_imx581.bin \
+    vendor/oneplus/sm8650-common/proprietary/odm/lib64/camera/com.qti.sensormodule.sunny_lyt808.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/com.qti.sensormodule.sunny_lyt808.bin \
+    vendor/oneplus/sm8650-common/proprietary/odm/lib64/camera/com.qti.sensormodule.sunny_ov64b40_tele.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/com.qti.sensormodule.sunny_ov64b40_tele.bin \
+    vendor/oneplus/sm8650-common/proprietary/odm/lib64/camera/com.qti.tuned.sunny_ov64b40_tele.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/com.qti.tuned.sunny_ov64b40_tele.bin \
     vendor/oneplus/sm8650-common/proprietary/product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/com.android.hotwordenrollment.common.util.xml \
     vendor/oneplus/sm8650-common/proprietary/system/etc/sysconfig/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
     vendor/oneplus/sm8650-common/proprietary/system_ext/etc/horae/horae.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/horae/horae.conf \
