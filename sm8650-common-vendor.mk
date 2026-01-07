@@ -16,6 +16,10 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/vendor.oplus.hardware.charger-V6-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.oplus.hardware.charger-V6-service.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/init/vendor.oplus.hardware.stability.oplus_project-V1-service.rc:$(TARGET_COPY_OUT_ODM)/etc/init/vendor.oplus.hardware.stability.oplus_project-V1-service.rc \
     vendor/oneplus/sm8650-common/proprietary/odm/etc/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_ODM)/etc/media_profiles_V1_0.xml \
+    vendor/oneplus/sm8650-common/proprietary/odm/lib64/camera/com.qti.sensormodule.qtech_imx581.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/com.qti.sensormodule.qtech_imx581.bin \
+    vendor/oneplus/sm8650-common/proprietary/odm/lib64/camera/com.qti.sensormodule.sunny_lyt808.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/com.qti.sensormodule.sunny_lyt808.bin \
+    vendor/oneplus/sm8650-common/proprietary/odm/lib64/camera/com.qti.sensormodule.sunny_ov64b40_tele.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/com.qti.sensormodule.sunny_ov64b40_tele.bin \
+    vendor/oneplus/sm8650-common/proprietary/odm/lib64/camera/com.qti.tuned.sunny_ov64b40_tele.bin:$(TARGET_COPY_OUT_ODM)/lib64/camera/com.qti.tuned.sunny_ov64b40_tele.bin \
     vendor/oneplus/sm8650-common/proprietary/odm/vendor/firmware/antdtx.b00:$(TARGET_COPY_OUT_ODM)/vendor/firmware/antdtx.b00 \
     vendor/oneplus/sm8650-common/proprietary/odm/vendor/firmware/antdtx.b01:$(TARGET_COPY_OUT_ODM)/vendor/firmware/antdtx.b01 \
     vendor/oneplus/sm8650-common/proprietary/odm/vendor/firmware/antdtx.b02:$(TARGET_COPY_OUT_ODM)/vendor/firmware/antdtx.b02 \
@@ -717,7 +721,7 @@ PRODUCT_PACKAGES += \
     libsysmon_cdsp_skel \
     libsystem_health_mon \
     libtaautoload \
-    libtensorflowlite_c \
+    libtensorflowlite_c_vendor \
     libthermalclient \
     libthreadutils \
     libtime_genoff \
@@ -879,22 +883,22 @@ PRODUCT_PACKAGES += \
     vendor.qti.qspmhal-impl \
     vendor.qti.qspmhal@1.0 \
     vendor.qti.voiceprint@1.0 \
-    chre_qsh_shim \
-    libDspIOProxy_skel \
-    libadsp_jpege_skel \
-    libbitml_nsp_skel \
-    libdsp_streamer_binning \
-    libdsp_streamer_qvrcam_receiver \
-    libeye_tracking_dsp_sample_skel \
-    libhalide_hexagon_remote_skel \
-    libmctfengine_skel \
-    libmlawbpostproc_dsp_skel \
-    libqvr_3dof_tracker_skel \
-    libqvr_cam_dsp_driver_skel \
-    libqvr_dsp_driver_skel \
-    libtracker_6dof_skel_8450 \
-    nearby.napp_header \
-    nearby \
+    vendor_lib_rfsa_adsp_chre_qsh_shim_so \
+    vendor_lib_rfsa_adsp_libDspIOProxy_skel_so \
+    vendor_lib_rfsa_adsp_libadsp_jpege_skel_so \
+    vendor_lib_rfsa_adsp_libbitml_nsp_skel_so \
+    vendor_lib_rfsa_adsp_libdsp_streamer_binning_so \
+    vendor_lib_rfsa_adsp_libdsp_streamer_qvrcam_receiver_so \
+    vendor_lib_rfsa_adsp_libeye_tracking_dsp_sample_skel_so \
+    vendor_lib_rfsa_adsp_libhalide_hexagon_remote_skel_so \
+    vendor_lib_rfsa_adsp_libmctfengine_skel_so \
+    vendor_lib_rfsa_adsp_libmlawbpostproc_dsp_skel_so \
+    vendor_lib_rfsa_adsp_libqvr_3dof_tracker_skel_so \
+    vendor_lib_rfsa_adsp_libqvr_cam_dsp_driver_skel_so \
+    vendor_lib_rfsa_adsp_libqvr_dsp_driver_skel_so \
+    vendor_lib_rfsa_adsp_libtracker_6dof_skel_8450_so \
+    vendor_lib_rfsa_adsp_nearby_napp_header \
+    vendor_lib_rfsa_adsp_nearby_so \
     com.qualcomm.qti.dpm.api@1.0 \
     libdiag_system \
     libdpmctmgr \
@@ -971,26 +975,26 @@ PRODUCT_PACKAGES += \
     libosensenativeproxy_client \
     libqcodec2_dolbydecoderfilter \
     libqcodec2_dolbyencoderfilter \
-    libQnnHtpV75Skel.aiboost \
-    libaiboostubwc_skel.aiboost \
-    libQnnHtpV75Skel.unsigned.aiboost \
-    capi_v3_oprec \
-    libCalculator_skel \
-    libQnnHtpV75 \
-    libQnnHtpV75Skel \
-    libQnnSaver \
-    libSnpeHtpV75Skel \
-    libSuperRawPost_skel \
-    libaisr_skel \
-    libarc_htp_driver_skel \
-    libcalculator_skel \
-    libhvxFaceBeautyPre_skel \
-    libktveffect \
-    libtfadsp_sb4_0_rx \
-    libtfadsp_sb4_0_tx \
-    libvdblurless_5.0.2_skel \
-    libvdsuperphoto_skel \
-    nlc_bgth_v1_5 \
+    odm_lib_rfsa_adsp_aiboost_signed_libQnnHtpV75Skel_so \
+    odm_lib_rfsa_adsp_aiboost_signed_libaiboostubwc_skel_so \
+    odm_lib_rfsa_adsp_aiboost_unsigned_libQnnHtpV75Skel_so \
+    odm_lib_rfsa_adsp_capi_v3_oprec_so \
+    odm_lib_rfsa_adsp_libCalculator_skel_so \
+    odm_lib_rfsa_adsp_libQnnHtpV75_so \
+    odm_lib_rfsa_adsp_libQnnHtpV75Skel_so \
+    odm_lib_rfsa_adsp_libQnnSaver_so \
+    odm_lib_rfsa_adsp_libSnpeHtpV75Skel_so \
+    odm_lib_rfsa_adsp_libSuperRawPost_skel_so \
+    odm_lib_rfsa_adsp_libaisr_skel_so \
+    odm_lib_rfsa_adsp_libarc_htp_driver_skel_so \
+    odm_lib_rfsa_adsp_libcalculator_skel_so \
+    odm_lib_rfsa_adsp_libhvxFaceBeautyPre_skel_so \
+    odm_lib_rfsa_adsp_libktveffect_so \
+    odm_lib_rfsa_adsp_libtfadsp_sb4_0_rx_so \
+    odm_lib_rfsa_adsp_libtfadsp_sb4_0_tx_so \
+    odm_lib_rfsa_adsp_libvdblurless_5_0_2_skel_so \
+    odm_lib_rfsa_adsp_libvdsuperphoto_skel_so \
+    odm_lib_rfsa_adsp_nlc_bgth_v1_5_so \
     com.google.android.widevine.nonupdatable \
     CACertService \
     CneApp \
@@ -1310,8 +1314,6 @@ PRODUCT_PACKAGES += \
     liblqe \
     libmapdata_api \
     libpal_net_if \
-    libprotobuf-cpp-full-21.7 \
-    libprotobuf-cpp-lite-21.7 \
     libqcrilDataModule \
     libqcrilNr \
     libqcrilNrCellInfoModule \
